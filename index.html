@@ -39,7 +39,8 @@
   --r:14px;
   --r2:20px;
 }
-html{scroll-behavior:smooth;zoom:1.55}
+html{scroll-behavior:smooth}
+@media(min-width:1025px){html{zoom:1.55}}
 body{font-family:'Exo 2',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:17px}
 ::selection{background:rgba(59,130,246,0.3);color:#fff}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
@@ -332,16 +333,94 @@ footer .right a:hover{color:var(--text-2)}
 .rv.v{opacity:1;transform:none}
 
 /* ══════════ RESPONSIVE ══════════ */
+/* ══════════ TABLET ══════════ */
+@media(max-width:1024px){
+  .wrap{padding:0 20px}
+  .hero{min-height:auto;padding:100px 20px 60px}
+  .hero h1{font-size:36px;letter-spacing:-1.5px}
+  .h-sub{font-size:17px}
+  .sec-t{font-size:32px}
+  .app-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .prod-hero{grid-template-columns:1fr;gap:24px;padding:32px 28px}
+  .prod-soon{grid-template-columns:1fr 1fr;gap:10px}
+  .custom-box{grid-template-columns:1fr;gap:32px;padding:40px 28px}
+  .why-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .cta-box{padding:44px 32px}
+  .approach,.products,.custom,.why{padding:80px 20px}
+  .cta{padding:40px 20px 80px}
+}
+
+/* ══════════ MOBILE ══════════ */
 @media(max-width:680px){
-  .hero-inner{padding:0 8px}
-  .app-grid,.why-grid{grid-template-columns:1fr}
-  .prod-hero{grid-template-columns:1fr}
-  .prod-soon{grid-template-columns:1fr}
-  .custom-box{grid-template-columns:1fr;padding:36px 24px}
-  .h-counters{flex-direction:column;gap:24px}
+  body{font-size:16px}
+  nav{height:56px;padding:0 16px}
+  .n-logo-icon{font-size:20px}
+  .n-logo-txt{font-size:17px}
   .n-links a:not(.n-cta){display:none}
-  .cta-box{padding:40px 24px}
-  .cta-contact{flex-direction:column;gap:12px}
+  .n-cta{padding:7px 16px;font-size:13px}
+  .hero{padding:80px 16px 48px}
+  .hero-inner{padding:0}
+  .hero h1{font-size:clamp(28px,8vw,38px);letter-spacing:-1px;line-height:1.12}
+  .h-badge{font-size:12px;padding:5px 12px 5px 8px;margin-bottom:24px}
+  .h-sub{font-size:16px;margin-bottom:28px}
+  .h-btns{flex-direction:column;gap:10px}
+  .btn-p,.btn-s{width:100%;justify-content:center;padding:14px 24px;font-size:15px}
+  .h-counters{flex-direction:row;gap:0;justify-content:space-around;margin-top:40px;padding-top:28px}
+  .h-counter strong{font-size:28px}
+  .h-counter span{font-size:10px;letter-spacing:1px}
+  .wrap{padding:0 16px}
+  .sec-l{font-size:11px;letter-spacing:3px;margin-bottom:12px}
+  .sec-t{font-size:clamp(24px,7vw,32px);letter-spacing:-1px;margin-bottom:10px}
+  .sec-d{font-size:16px}
+  .approach,.products,.custom,.why{padding:60px 16px}
+  .cta{padding:32px 16px 60px}
+  .app-grid{grid-template-columns:1fr;gap:10px;margin-top:36px}
+  .app-card{padding:28px 22px}
+  .app-ico{font-size:28px;margin-bottom:12px}
+  .app-card h3{font-size:18px}
+  .app-card p{font-size:14px}
+  .app-num{margin-bottom:14px}
+  .prod-hero{grid-template-columns:1fr;gap:20px;padding:28px 22px}
+  .prod-hero h3{font-size:24px}
+  .prod-hero-sub{font-size:15px}
+  .prod-feat li{font-size:13.5px}
+  .prod-btn{width:100%;justify-content:center;padding:12px 20px;font-size:14px}
+  .prod-hero-visual{order:-1}
+  .prod-logo{width:140px}
+  .prod-stats{grid-template-columns:1fr 1fr;gap:8px}
+  .prod-stat{padding:14px 12px}
+  .prod-stat strong{font-size:18px}
+  .prod-stat span{font-size:10px}
+  .prod-soon{grid-template-columns:1fr;gap:10px;margin-top:12px}
+  .prod-soon-card{padding:22px 18px}
+  .prod-soon-ico{font-size:26px;margin-bottom:8px}
+  .prod-soon-card h4{font-size:15px}
+  .prod-soon-card p{font-size:12px}
+  .custom-box{grid-template-columns:1fr;gap:28px;padding:32px 20px}
+  .custom-box h2{font-size:clamp(22px,6vw,30px)}
+  .custom-desc{font-size:15px;margin-bottom:20px}
+  .custom-steps{gap:14px;margin-bottom:24px}
+  .custom-step-n{width:32px;height:32px;font-size:12px;border-radius:8px}
+  .custom-step-t{font-size:14.5px}
+  .custom-step-d{font-size:13px}
+  .custom-right{gap:10px}
+  .custom-card{padding:18px 16px;gap:12px}
+  .custom-card-ico{font-size:24px}
+  .custom-card h4{font-size:14px}
+  .custom-card p{font-size:12px}
+  .why-grid{grid-template-columns:1fr;gap:10px;margin-top:36px}
+  .why-card{padding:26px 22px}
+  .why-ico{font-size:26px;margin-bottom:10px}
+  .why-card h3{font-size:17px}
+  .why-card p{font-size:14px}
+  .cta-box{padding:36px 20px;border-radius:16px}
+  .cta-box h2{font-size:clamp(22px,6vw,30px)}
+  .cta-box p{font-size:15px;margin-bottom:24px}
+  .cta-contact{flex-direction:column;gap:10px;font-size:13px}
+  footer{padding:24px 16px;flex-direction:column;align-items:flex-start;gap:12px}
+  footer .left{font-size:12px}
+  footer .right{gap:14px}
+  footer .right a{font-size:12px}
 }
 </style>
 </head>
