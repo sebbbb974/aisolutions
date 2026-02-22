@@ -86,6 +86,25 @@ nav{
 }
 .n-cta:hover{background:var(--accent-2);box-shadow:0 0 28px rgba(59,130,246,0.3)}
 
+/* Dropdown */
+.n-dropdown{position:relative;display:flex;align-items:center}
+.n-drop-trigger{font-size:14.5px;font-weight:600;color:var(--text-2);text-decoration:none;padding:7px 14px;border-radius:8px;transition:.2s;cursor:pointer}
+.n-drop-trigger:hover{color:#fff;background:rgba(59,130,246,0.08)}
+.n-drop-menu{
+  display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  min-width:200px;padding:8px;margin-top:8px;
+  background:var(--surface-2);border:1px solid var(--border-2);border-radius:12px;
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 12px 40px rgba(0,0,0,0.4);z-index:1000;
+}
+.n-dropdown:hover .n-drop-menu{display:flex;flex-direction:column}
+.n-drop-menu a{
+  font-size:14px;font-weight:600;color:var(--text-2);text-decoration:none;
+  padding:10px 14px;border-radius:8px;transition:.2s;white-space:nowrap;
+}
+.n-drop-menu a:hover{color:#fff;background:rgba(59,130,246,0.1)}
+
+
 /* ══════════ HERO ══════════ */
 .hero{
   min-height:100vh;display:flex;align-items:center;
@@ -467,7 +486,7 @@ footer .right a:hover{color:var(--text-2)}
   </a>
   <div class="n-links">
     <a href="#solutions">Solutions</a>
-    <a href="#produits">Produits</a>
+    <div class="n-dropdown"><a href="#produits" class="n-drop-trigger">Produits ▾</a><div class="n-drop-menu"><a href="#restopilot">🍕 RestoPilot</a><a href="#facturdom">📄 FacturDOM</a><a href="#exodom">🛡️ ExoDOM</a></div></div>
     <a href="#sur-mesure">Sur mesure</a>
     <a href="#contact" class="n-cta">Nous contacter</a>
   </div>
@@ -565,7 +584,7 @@ footer .right a:hover{color:var(--text-2)}
     <h2 class="sec-t rv">Des cockpits déjà prêts<br>pour votre secteur</h2>
     <p class="sec-d rv">RestoPilot, FacturDOM et ExoDOM — nos solutions couvrent déjà la restauration, la facturation DOM-TOM et l'audit social. D'autres métiers arrivent. Le vôtre est peut-être le prochain.</p>
 
-    <div class="prod-hero rv">
+    <div class="prod-hero rv" id="restopilot">
       <div>
         <div class="prod-hero-badge">● Disponible maintenant</div>
         <h3>Resto<span>Pilot</span></h3>
@@ -597,7 +616,7 @@ footer .right a:hover{color:var(--text-2)}
       </div>
     </div>
 
-    <div class="prod-hero facturdom rv">
+    <div class="prod-hero facturdom rv" id="facturdom">
       <div>
         <div class="prod-hero-badge">● Disponible maintenant</div>
         <h3>Factur<span>DOM</span></h3>
@@ -623,7 +642,7 @@ footer .right a:hover{color:var(--text-2)}
       </div>
     </div>
 
-    <div class="prod-hero exodom rv" style="margin-top:32px">
+    <div class="prod-hero exodom rv" id="exodom" style="margin-top:32px">
       <div>
         <div class="prod-hero-badge">● Disponible maintenant</div>
         <h3>Exo<span>DOM</span></h3>
